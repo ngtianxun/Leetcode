@@ -1,3 +1,6 @@
+// Reference from: https://leetcode.com/problems/two-sum/discuss/3/Accepted-Java-O(n)-Solution
+
+import java.util.HashMap;
 
 public class TwoSum {
 	
@@ -28,8 +31,32 @@ public class TwoSum {
 	-109 <= target <= 109
 	Only one valid answer exists.
 	 */
-	public static void main(String[] args) {
+	public static int[] twoSum(int[] nums, int target) {
+		// Create new HashMap object
+		HashMap<Integer, Integer> map = new HashMap<>();
 		
+		for (int i = 0; i < nums.length; i++) {
+			if (map.containsKey(target - nums[i])) {
+				return new int[] {map.get(target - nums[i]), i};
+			}
+			map.put(nums[i], i);
+		}
+		
+		return new int[] {0, 0};
+	}
+	
+	public static void main(String[] args) {
+		// Test case
+		int nums[] = {2, 7, 11, 7, 7};
+		int target = 18;
+		
+		int results[] = new int[2];
+		
+		results = twoSum(nums, target);
+		
+		for (int i = 0; i < results.length; i++) {
+			System.out.print(results[i] + " ");
+		}
 	}
 
 }
