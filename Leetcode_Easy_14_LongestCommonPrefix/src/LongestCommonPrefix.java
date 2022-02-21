@@ -23,6 +23,10 @@ public class LongestCommonPrefix {
 //    }
 	
 //	Using Array.sort to compare first and last (very different between the two since using dictionary arrangement)
+// 	For example:
+// 	AAAB
+//	AAABA
+//	BBAAA
 	
 	public static String longestCommonPrefix(String[] strs) {
 		StringBuilder commonPrefix = new StringBuilder();
@@ -39,7 +43,11 @@ public class LongestCommonPrefix {
 		}
 		
 		return commonPrefix.toString();
+<<<<<<< HEAD
     }
+=======
+    	}
+>>>>>>> branch 'master' of https://github.com/ngtianxun/Leetcode.git
 
 	public static void main(String[] args) {
 		String strs[] = {"flo", "fliw", "fooght"};
